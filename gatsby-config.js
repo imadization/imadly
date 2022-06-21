@@ -1,30 +1,21 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ */
+
 module.exports = {
-  siteMetadata: {
-    siteUrl: 'https://www.imadly.com',
-    title: 'Imad Uddin',
-  },
+  /* Your site config here */
   plugins: [
-    'gatsby-plugin-gatsby-cloud',
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-less`,
       options: {
-        name: 'images',
-        path: './src/images/',
+        javascriptEnabled: true,
+        modifyVars: {
+          "primary-color": "#00BFA6",
+        },
       },
-      __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
     },
   ],
-};
+}
